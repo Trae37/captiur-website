@@ -5,15 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Captiur - Restore your workspace context</title>
 
-    <!-- Fonts -->
+    <!-- Preconnect to external domains -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://hoirqrkdgbmvpwutwuwj.supabase.co" crossorigin>
+    <link rel="preconnect" href="https://code.iconify.design" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+
+    <!-- Preload critical images -->
+    <link rel="preload" as="image" href="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/75e3a9df-4eb2-4588-b94a-52add4dded99_3840w.jpg">
+    <link rel="preload" as="image" href="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/af5497d1-9131-40fc-a319-06397a2f805d_800w.png">
+
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Scripts -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" defer></script>
 
     <script>
         // Apply theme immediately to prevent flash
@@ -171,7 +180,7 @@
                     <!-- Main Image Card -->
                     <div class="relative w-full max-w-md aspect-[4/5] sm:aspect-square lg:aspect-[4/5] rounded-[2.5rem] bg-neutral-100 dark:bg-neutral-800 overflow-hidden shadow-2xl border border-white/50 dark:border-neutral-700/50 animate-float group">
                         <!-- Placeholder Image -->
-                        <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/af5497d1-9131-40fc-a319-06397a2f805d_800w.png" alt="Workspace Interface" class="group-hover:scale-105 transition-transform duration-700 opacity-90 w-full h-full object-cover">
+                        <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/af5497d1-9131-40fc-a319-06397a2f805d_800w.png" alt="Workspace Interface" class="group-hover:scale-105 transition-transform duration-700 opacity-90 w-full h-full object-cover" fetchpriority="high" loading="eager">
 
                         <!-- Scanning Effect Overlay -->
                         <div class="absolute inset-0 pointer-events-none opacity-30 mix-blend-overlay bg-[linear-gradient(rgba(18,18,18,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(0,0,0,0.06),rgba(0,0,0,0.02),rgba(0,0,0,0.06))] bg-[length:100%_4px,3px_100%]"></div>
@@ -311,7 +320,7 @@
 
                 <!-- Card 1 (Top Left) -->
                 <div class="relative bg-neutral-900 rounded-[2rem] overflow-hidden group cursor-pointer animate-fade-up min-h-[14rem]" style="animation-delay: 0.3s">
-                    <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/ce46af3d-1ade-4760-9519-01f54c087708_800w.png" class="group-hover:scale-105 transition-transform duration-700 opacity-60 w-full h-full object-cover absolute top-0 right-0 bottom-0 left-0" alt="Focus">
+                    <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/ce46af3d-1ade-4760-9519-01f54c087708_800w.png" class="group-hover:scale-105 transition-transform duration-700 opacity-60 w-full h-full object-cover absolute top-0 right-0 bottom-0 left-0" alt="Focus" loading="lazy">
                     <div class="bg-gradient-to-t from-black/80 via-transparent to-transparent relative top-0 right-0 bottom-0 left-0 h-full"></div>
                     <div class="absolute bottom-0 p-6">
                         <div class="w-8 h-8 rounded-full bg-white backdrop-blur mb-3 flex items-center justify-center text-black border border-white/20">
@@ -324,7 +333,7 @@
 
                 <!-- Card 2 (Top Right) -->
                 <div class="relative bg-white dark:bg-neutral-900 rounded-[2rem] overflow-hidden group cursor-pointer border border-neutral-200 dark:border-neutral-700 animate-fade-up min-h-[14rem]" style="animation-delay: 0.4s">
-                    <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/f0c36ed2-5271-4582-975c-e453f8e6256f_800w.png" class="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-700" alt="Brain Space">
+                    <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/f0c36ed2-5271-4582-975c-e453f8e6256f_800w.png" class="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-700" alt="Brain Space" loading="lazy">
                     <div class="bg-gradient-to-t from-black/60 to-transparent absolute top-0 right-0 bottom-0 left-0 h-full"></div>
                     <div class="absolute top-4 right-4 bg-white/90 dark:bg-neutral-800/90 backdrop-blur px-2 py-1 rounded-md text-[10px] font-medium text-neutral-900 dark:text-white">Auto-save</div>
                     <div class="absolute bottom-0 p-6">
@@ -338,7 +347,7 @@
 
                 <!-- Card 3 (Bottom Full Width) -->
                 <div class="relative bg-white dark:bg-neutral-900 rounded-[2rem] overflow-hidden group cursor-pointer border border-neutral-200 dark:border-neutral-700 animate-fade-up col-span-2 min-h-[14rem]" style="animation-delay: 0.5s">
-                    <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/e11b9fe2-e954-4e88-b526-d1a5a03cc7ad_800w.png" class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700" alt="Timeline">
+                    <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/e11b9fe2-e954-4e88-b526-d1a5a03cc7ad_800w.png" class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700" alt="Timeline" loading="lazy">
                     <div class="bg-gradient-to-t from-black/70 to-transparent absolute top-0 right-0 bottom-0 left-0 h-full"></div>
 
                     <div class="absolute top-0 right-0 p-6">
