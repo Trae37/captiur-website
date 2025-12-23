@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Changelog | Captiur</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Scripts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+
+    <script>
+        // Apply theme immediately to prevent flash
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                document.documentElement.classList.add('dark');
+            }
+        })();
+    </script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+        }
+
+        /* Custom Animations - entrance animations disabled to prevent blink on page navigation */
+        .animate-fade-up { }
+
+        /* Hide scrollbar */
+        ::-webkit-scrollbar { width: 0px; background: transparent; }
+
+        /* Dark mode transitions - disabled initially to prevent flash */
+        .transitions-enabled * {
+            transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+        }
+    </style>
+</head>
+<body class="min-h-screen antialiased selection:bg-neutral-200 selection:text-black text-neutral-900 bg-neutral-50 dark:bg-neutral-950 dark:text-neutral-100 dark:selection:bg-neutral-700 dark:selection:text-white">
+
+    <!-- Fixed Background -->
+    <div class="fixed inset-0 -z-10 h-screen blur-3xl opacity-30 dark:opacity-20 bg-cover bg-center" style="background-image: url('https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/75e3a9df-4eb2-4588-b94a-52add4dded99_3840w.jpg');"></div>
+
+    <!-- Soft Gradients -->
+    <div class="pointer-events-none fixed inset-0 overflow-hidden -z-10">
+        <div class="absolute -top-20 -left-20 h-96 w-96 rounded-full bg-neutral-400/10 dark:bg-neutral-500/10 blur-3xl"></div>
+        <div class="absolute top-1/2 right-0 h-96 w-96 rounded-full bg-neutral-400/10 dark:bg-neutral-500/10 blur-3xl"></div>
+    </div>
+
+    <!-- Navigation -->
+    <header class="sticky top-4 z-50 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="flex bg-white/70 dark:bg-neutral-900/70 border-white/40 dark:border-neutral-700/40 border ring-black/5 dark:ring-white/5 ring-1 rounded-2xl pt-3 pr-5 pb-3 pl-5 shadow-sm backdrop-blur-xl items-center justify-between">
+            <div class="flex gap-6 gap-x-6 gap-y-6 items-center">
+                <a href="index.html" class="flex items-center gap-2 group">
+                    <!-- Captiur Logo - Symbol + Text -->
+                    <!-- Light mode -->
+                    <div class="flex items-center dark:hidden">
+                        <svg class="h-7 w-auto" viewBox="165 178 285 56" xmlns="http://www.w3.org/2000/svg">
+                            <path fill="#171717" d="M171.716370,209.970581 C170.238373,201.644791 172.688950,194.668747 179.755630,190.027679 C187.078735,185.218170 194.787476,185.711472 202.339569,190.030975 C203.245270,190.549011 204.433853,190.572464 205.491333,190.825150 C204.965347,189.672470 204.703705,187.793823 203.868713,187.489792 C199.732193,185.983505 195.489304,184.052261 191.200806,183.822662 C180.739532,183.262619 172.255188,189.406464 168.975479,198.886536 C166.098495,207.202499 169.242065,218.210724 175.932785,223.249680 C184.008469,229.331726 196.270874,230.112625 203.443054,224.810379 C204.483444,224.041214 204.866928,222.383453 205.554382,221.136856 C204.299591,221.476898 202.849182,221.521622 201.820480,222.203003 C192.277847,228.524002 175.412857,225.247681 171.716370,209.970581z M220.510193,204.888840 C217.068741,212.414139 213.627274,219.939438 210.185822,227.464737 C210.543289,227.810654 210.900757,228.156570 211.258224,228.502472 C212.472504,227.320877 214.158615,226.358887 214.826813,224.923126 C220.436752,212.869156 225.860031,200.728317 231.719055,187.774490 C232.870010,190.110016 233.621521,191.541336 234.291672,193.009811 C239.244904,203.863724 244.129898,214.749451 249.198105,225.549255 C249.754196,226.734222 251.333145,227.439148 252.437668,228.366730 C252.780640,228.006165 253.123596,227.645599 253.466568,227.285034 C247.101257,213.453583 240.758682,199.611511 234.314819,185.816757 C233.922653,184.977188 232.607697,183.890884 231.932068,184.019806 C230.910187,184.214783 229.689148,185.192047 229.220154,186.160187 C226.328751,192.128937 223.624649,198.188416 220.510193,204.888840z M270.569061,186.973373 C273.896362,186.991974 277.240479,186.803513 280.547577,187.071503 C287.854675,187.663620 291.832703,191.691742 292.009888,198.340912 C292.181183,204.768616 288.742279,209.360046 282.311646,210.073807 C275.601898,210.818558 268.808044,210.805176 262.075500,211.122070 C260.980591,225.622375 261.284363,227.489563 265.152527,227.764084 C265.152527,223.157532 265.152527,218.572281 265.152527,214.071976 C271.358704,213.743042 277.193451,213.803818 282.917816,213.038681 C290.419952,212.035950 294.965332,206.775696 295.294495,199.694153 C295.660858,191.812012 292.181305,186.357803 284.230896,184.965317 C276.996887,183.698334 269.497345,183.947662 262.114838,183.528610 C261.908386,184.003143 261.701935,184.477692 261.495483,184.952225 C262.206116,185.623703 262.849548,186.760529 263.640656,186.874741 C265.596802,187.157166 267.620544,186.971313 270.569061,186.973373z M318.811584,218.407166 C318.811584,208.008560 318.811584,197.609955 318.811584,187.012772 C323.328369,187.012772 327.145660,187.130753 330.948059,186.944672 C332.172760,186.884735 333.358307,186.024216 334.561768,185.529968 C333.417542,184.971832 332.282166,183.952438 331.127625,183.930206 C323.473816,183.782944 315.815887,183.849197 308.159302,183.846619 C305.282043,183.845642 302.404785,183.846451 299.527527,183.846451 C299.481628,184.441528 299.435730,185.036591 299.389832,185.631668 C304.084137,188.977707 310.114563,185.530777 315.188843,187.657883 C315.188843,192.590942 315.189270,197.415024 315.188721,202.239105 C315.187866,209.895889 315.125336,217.553772 315.260956,225.208130 C315.278290,226.186264 316.327118,227.146133 316.898071,228.114471 C317.539307,227.197113 318.588409,226.340256 318.735352,225.349579 C319.025177,223.395660 318.815002,221.367584 318.811584,218.407166z M342.179596,205.500000 C342.179596,212.931107 342.179596,220.362213 342.179596,227.793320 C342.659729,228.033981 343.139893,228.274643 343.620026,228.515305 C344.368378,227.580139 345.758972,226.651520 345.768585,225.708847 C345.909027,211.930832 345.865112,198.150940 345.865112,184.371506 C345.355255,184.106705 344.845398,183.841919 344.335541,183.577133 C343.616302,184.726013 342.318756,185.853638 342.275604,187.027359 C342.061737,192.844955 342.179016,198.674698 342.179596,205.500000z M362.088837,218.191879 C366.421997,226.672943 372.006409,229.404495 382.200500,228.029297 C389.282227,227.073959 394.729919,222.404495 395.444458,214.622101 C396.324371,205.038391 395.914612,195.333588 395.941162,185.680786 C395.942780,185.095642 394.878754,184.507584 394.310577,183.920898 C393.849304,184.458466 393.106140,184.940826 392.987732,185.545547 C392.767487,186.669846 392.917938,187.865570 392.902771,189.031387 C392.800903,196.857452 393.049469,204.708603 392.494873,212.502579 C391.914764,220.655151 387.412537,224.783371 379.854553,225.210175 C369.745514,225.781006 364.285339,220.865158 364.017792,210.486832 C363.791229,201.697662 363.971100,192.897995 363.971100,183.880585 C362.720459,184.033875 361.225464,184.140488 361.226593,184.227814 C361.369324,195.295944 361.622101,206.362656 362.088837,218.191879z M439.114410,219.205582 C437.668762,217.048553 436.223114,214.891510 434.758453,212.706116 C443.209320,208.186264 445.935364,203.013138 444.249115,195.271912 C442.756622,188.420105 437.218842,184.334732 428.655426,184.005020 C423.831055,183.819244 418.993835,183.835129 414.166992,183.951233 C413.121094,183.976379 412.094879,184.819901 411.059601,185.286469 C412.180786,185.852676 413.284241,186.863205 414.426239,186.908829 C419.582489,187.114792 424.764923,186.807678 429.909271,187.135315 C437.567780,187.623032 441.604065,192.441025 441.162659,200.025284 C440.767059,206.822678 435.950409,210.544876 426.977905,210.771805 C421.730377,210.904510 416.476746,210.795990 411.205322,210.795990 C411.205322,216.879242 411.205322,222.329971 411.205322,228.015259 C412.026031,228.015259 413.195038,228.082458 413.204590,228.005646 C413.775391,223.410049 414.250763,218.802582 414.722870,214.313309 C425.158356,212.190079 434.420532,212.880157 439.078186,224.522751 C439.435913,225.416962 440.098267,226.368576 440.888123,226.867157 C441.973328,227.552139 443.315643,227.829788 444.547821,228.281982 C444.704224,228.012970 444.860657,227.743958 445.017090,227.474960 C443.190460,224.924133 441.363831,222.373306 439.114410,219.205582z"/>
+                        </svg>
+                    </div>
+                    <!-- Dark mode -->
+                    <div class="hidden dark:flex items-center">
+                        <svg class="h-7 w-auto" viewBox="165 178 285 56" xmlns="http://www.w3.org/2000/svg">
+                            <path fill="#fafafa" d="M171.716370,209.970581 C170.238373,201.644791 172.688950,194.668747 179.755630,190.027679 C187.078735,185.218170 194.787476,185.711472 202.339569,190.030975 C203.245270,190.549011 204.433853,190.572464 205.491333,190.825150 C204.965347,189.672470 204.703705,187.793823 203.868713,187.489792 C199.732193,185.983505 195.489304,184.052261 191.200806,183.822662 C180.739532,183.262619 172.255188,189.406464 168.975479,198.886536 C166.098495,207.202499 169.242065,218.210724 175.932785,223.249680 C184.008469,229.331726 196.270874,230.112625 203.443054,224.810379 C204.483444,224.041214 204.866928,222.383453 205.554382,221.136856 C204.299591,221.476898 202.849182,221.521622 201.820480,222.203003 C192.277847,228.524002 175.412857,225.247681 171.716370,209.970581z M220.510193,204.888840 C217.068741,212.414139 213.627274,219.939438 210.185822,227.464737 C210.543289,227.810654 210.900757,228.156570 211.258224,228.502472 C212.472504,227.320877 214.158615,226.358887 214.826813,224.923126 C220.436752,212.869156 225.860031,200.728317 231.719055,187.774490 C232.870010,190.110016 233.621521,191.541336 234.291672,193.009811 C239.244904,203.863724 244.129898,214.749451 249.198105,225.549255 C249.754196,226.734222 251.333145,227.439148 252.437668,228.366730 C252.780640,228.006165 253.123596,227.645599 253.466568,227.285034 C247.101257,213.453583 240.758682,199.611511 234.314819,185.816757 C233.922653,184.977188 232.607697,183.890884 231.932068,184.019806 C230.910187,184.214783 229.689148,185.192047 229.220154,186.160187 C226.328751,192.128937 223.624649,198.188416 220.510193,204.888840z M270.569061,186.973373 C273.896362,186.991974 277.240479,186.803513 280.547577,187.071503 C287.854675,187.663620 291.832703,191.691742 292.009888,198.340912 C292.181183,204.768616 288.742279,209.360046 282.311646,210.073807 C275.601898,210.818558 268.808044,210.805176 262.075500,211.122070 C260.980591,225.622375 261.284363,227.489563 265.152527,227.764084 C265.152527,223.157532 265.152527,218.572281 265.152527,214.071976 C271.358704,213.743042 277.193451,213.803818 282.917816,213.038681 C290.419952,212.035950 294.965332,206.775696 295.294495,199.694153 C295.660858,191.812012 292.181305,186.357803 284.230896,184.965317 C276.996887,183.698334 269.497345,183.947662 262.114838,183.528610 C261.908386,184.003143 261.701935,184.477692 261.495483,184.952225 C262.206116,185.623703 262.849548,186.760529 263.640656,186.874741 C265.596802,187.157166 267.620544,186.971313 270.569061,186.973373z M318.811584,218.407166 C318.811584,208.008560 318.811584,197.609955 318.811584,187.012772 C323.328369,187.012772 327.145660,187.130753 330.948059,186.944672 C332.172760,186.884735 333.358307,186.024216 334.561768,185.529968 C333.417542,184.971832 332.282166,183.952438 331.127625,183.930206 C323.473816,183.782944 315.815887,183.849197 308.159302,183.846619 C305.282043,183.845642 302.404785,183.846451 299.527527,183.846451 C299.481628,184.441528 299.435730,185.036591 299.389832,185.631668 C304.084137,188.977707 310.114563,185.530777 315.188843,187.657883 C315.188843,192.590942 315.189270,197.415024 315.188721,202.239105 C315.187866,209.895889 315.125336,217.553772 315.260956,225.208130 C315.278290,226.186264 316.327118,227.146133 316.898071,228.114471 C317.539307,227.197113 318.588409,226.340256 318.735352,225.349579 C319.025177,223.395660 318.815002,221.367584 318.811584,218.407166z M342.179596,205.500000 C342.179596,212.931107 342.179596,220.362213 342.179596,227.793320 C342.659729,228.033981 343.139893,228.274643 343.620026,228.515305 C344.368378,227.580139 345.758972,226.651520 345.768585,225.708847 C345.909027,211.930832 345.865112,198.150940 345.865112,184.371506 C345.355255,184.106705 344.845398,183.841919 344.335541,183.577133 C343.616302,184.726013 342.318756,185.853638 342.275604,187.027359 C342.061737,192.844955 342.179016,198.674698 342.179596,205.500000z M362.088837,218.191879 C366.421997,226.672943 372.006409,229.404495 382.200500,228.029297 C389.282227,227.073959 394.729919,222.404495 395.444458,214.622101 C396.324371,205.038391 395.914612,195.333588 395.941162,185.680786 C395.942780,185.095642 394.878754,184.507584 394.310577,183.920898 C393.849304,184.458466 393.106140,184.940826 392.987732,185.545547 C392.767487,186.669846 392.917938,187.865570 392.902771,189.031387 C392.800903,196.857452 393.049469,204.708603 392.494873,212.502579 C391.914764,220.655151 387.412537,224.783371 379.854553,225.210175 C369.745514,225.781006 364.285339,220.865158 364.017792,210.486832 C363.791229,201.697662 363.971100,192.897995 363.971100,183.880585 C362.720459,184.033875 361.225464,184.140488 361.226593,184.227814 C361.369324,195.295944 361.622101,206.362656 362.088837,218.191879z M439.114410,219.205582 C437.668762,217.048553 436.223114,214.891510 434.758453,212.706116 C443.209320,208.186264 445.935364,203.013138 444.249115,195.271912 C442.756622,188.420105 437.218842,184.334732 428.655426,184.005020 C423.831055,183.819244 418.993835,183.835129 414.166992,183.951233 C413.121094,183.976379 412.094879,184.819901 411.059601,185.286469 C412.180786,185.852676 413.284241,186.863205 414.426239,186.908829 C419.582489,187.114792 424.764923,186.807678 429.909271,187.135315 C437.567780,187.623032 441.604065,192.441025 441.162659,200.025284 C440.767059,206.822678 435.950409,210.544876 426.977905,210.771805 C421.730377,210.904510 416.476746,210.795990 411.205322,210.795990 C411.205322,216.879242 411.205322,222.329971 411.205322,228.015259 C412.026031,228.015259 413.195038,228.082458 413.204590,228.005646 C413.775391,223.410049 414.250763,218.802582 414.722870,214.313309 C425.158356,212.190079 434.420532,212.880157 439.078186,224.522751 C439.435913,225.416962 440.098267,226.368576 440.888123,226.867157 C441.973328,227.552139 443.315643,227.829788 444.547821,228.281982 C444.704224,228.012970 444.860657,227.743958 445.017090,227.474960 C443.190460,224.924133 441.363831,222.373306 439.114410,219.205582z"/>
+                        </svg>
+                    </div>
+                </a>
+            </div>
+
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="how-it-works.html" class="text-xs font-medium text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">How it works</a>
+                <a href="pricing.html" class="text-xs font-medium text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">Pricing</a>
+                <a href="download.html" class="text-xs font-medium text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">Download</a>
+                <a href="changelog.html" class="text-xs font-medium text-neutral-900 dark:text-white transition-colors">Changelog</a>
+            </nav>
+
+            <div class="flex items-center gap-3">
+                <!-- Theme Toggle -->
+                <button id="theme-toggle" class="w-9 h-9 rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white hover:border-neutral-300 dark:hover:border-neutral-600 transition-colors flex items-center justify-center">
+                    <iconify-icon icon="lucide:sun" width="16" class="hidden dark:block"></iconify-icon>
+                    <iconify-icon icon="lucide:moon" width="16" class="block dark:hidden"></iconify-icon>
+                </button>
+                <button class="hidden md:block text-xs font-medium text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white px-3 py-1.5 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors">Sign In</button>
+                <a href="download.html" class="inline-flex items-center gap-1.5 bg-black dark:bg-white text-white dark:text-black border border-neutral-800 dark:border-neutral-200 px-4 py-2 rounded-xl text-xs font-medium hover:bg-neutral-800 dark:hover:bg-neutral-100 transition-all hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-neutral-900/20 dark:shadow-neutral-100/10">
+                    <span>Get Captiur</span>
+                    <iconify-icon icon="lucide:arrow-right" width="14"></iconify-icon>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
+
+        <!-- Hero Section -->
+        <section class="text-center animate-fade-up">
+            <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/60 dark:bg-neutral-800/60 border border-white dark:border-neutral-700 shadow-sm mb-6">
+                <iconify-icon icon="lucide:history" width="14" class="text-neutral-500"></iconify-icon>
+                <span class="text-[10px] uppercase font-medium text-neutral-600 dark:text-neutral-400 tracking-wider">Version History</span>
+            </span>
+            <h1 class="text-4xl sm:text-5xl font-semibold text-neutral-900 dark:text-white tracking-tighter leading-tight mb-4">
+                Changelog
+            </h1>
+            <p class="text-lg text-neutral-600 dark:text-neutral-400">
+                New updates and improvements to Captiur.
+            </p>
+        </section>
+
+        <!-- Changelog Entries -->
+        <section class="space-y-8 animate-fade-up" style="animation-delay: 0.2s">
+
+            <!-- Version 1.0.0 -->
+            <article class="bg-white/40 dark:bg-neutral-900/40 border border-white/50 dark:border-neutral-700/50 rounded-[2rem] p-8 backdrop-blur-sm">
+                <div class="flex flex-wrap items-center gap-3 mb-6">
+                    <span class="inline-flex items-center px-3 py-1 rounded-full bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-400 text-xs font-semibold">
+                        v1.0.0
+                    </span>
+                    <span class="text-sm text-neutral-500 dark:text-neutral-400">December 20, 2025</span>
+                    <span class="inline-flex items-center px-2 py-0.5 rounded bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-[10px] font-medium uppercase">
+                        Latest
+                    </span>
+                </div>
+
+                <h2 class="text-xl font-semibold text-neutral-900 dark:text-white mb-4">Initial Release</h2>
+                <p class="text-sm text-neutral-600 dark:text-neutral-400 mb-6">
+                    We're excited to announce the first public release of Captiur. This release includes all core functionality for capturing and restoring your development workspace.
+                </p>
+
+                <div class="space-y-4">
+                    <div>
+                        <h3 class="flex items-center gap-2 text-sm font-semibold text-neutral-900 dark:text-white mb-2">
+                            <iconify-icon icon="lucide:sparkles" width="14" class="text-green-500"></iconify-icon>
+                            New Features
+                        </h3>
+                        <ul class="space-y-2 text-sm text-neutral-600 dark:text-neutral-400 ml-5">
+                            <li class="flex items-start gap-2">
+                                <span class="text-neutral-400">-</span>
+                                One-click workspace capture for VS Code, Cursor, Chrome, Brave, Edge, and terminal sessions
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-neutral-400">-</span>
+                                Instant workspace restore with Smart Restore technology
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-neutral-400">-</span>
+                                Session notes for capturing mental context alongside workspace state
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-neutral-400">-</span>
+                                Visual timeline browser for navigating workspace snapshots
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-neutral-400">-</span>
+                                Full-text search across all captures
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-neutral-400">-</span>
+                                Configurable auto-save intervals (5min, 15min, 30min, 1hr)
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-neutral-400">-</span>
+                                Global hotkey support for quick capture/restore
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-neutral-400">-</span>
+                                Local-first encrypted storage with SQLite backend
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="flex items-center gap-2 text-sm font-semibold text-neutral-900 dark:text-white mb-2">
+                            <iconify-icon icon="lucide:monitor" width="14" class="text-blue-500"></iconify-icon>
+                            Supported Platforms
+                        </h3>
+                        <ul class="space-y-2 text-sm text-neutral-600 dark:text-neutral-400 ml-5">
+                            <li class="flex items-start gap-2">
+                                <span class="text-neutral-400">-</span>
+                                Windows 10/11 (x64)
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Placeholder for future versions -->
+            <div class="text-center py-8">
+                <p class="text-sm text-neutral-500 dark:text-neutral-400">
+                    More updates coming soon. Follow us on
+                    <a href="https://x.com/MaysTrashard" class="text-orange-500 hover:underline">X</a>
+                    for the latest news.
+                </p>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 border-t border-neutral-200 dark:border-neutral-800">
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+            <span class="text-xs text-neutral-500 dark:text-neutral-400">&copy; 2025 Captiur. All rights reserved.</span>
+            <div class="flex items-center gap-6">
+                <a href="#" class="text-xs text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">Privacy</a>
+                <a href="#" class="text-xs text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">Terms</a>
+                <div class="flex items-center gap-3">
+                    <a href="https://github.com/Trae37" target="_blank" rel="noopener noreferrer" class="text-neutral-400 dark:text-neutral-500 hover:text-neutral-900 dark:hover:text-white transition-colors">
+                        <iconify-icon icon="mdi:github" width="18"></iconify-icon>
+                    </a>
+                    <a href="https://x.com/MaysTrashard" target="_blank" rel="noopener noreferrer" class="text-neutral-400 dark:text-neutral-500 hover:text-neutral-900 dark:hover:text-white transition-colors">
+                        <iconify-icon icon="ri:twitter-x-fill" width="16"></iconify-icon>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+
+        // Enable transitions after page load to prevent flash
+        setTimeout(() => {
+            document.body.classList.add('transitions-enabled');
+        }, 100);
+
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+        });
+    </script>
+
+</body>
+</html>
